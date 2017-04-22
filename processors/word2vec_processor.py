@@ -10,10 +10,10 @@ from utils import file_helper
 log = logging.getLogger(__name__)
 
 
-class SimpleProcessor(Processor):
+class Word2VecProcessor(Processor):
 
     def process(self):
-        log.info("SimpleProcessor begun")
+        log.info("Word2VecProcessor begun")
 
         wv_model = \
             gensim.models.Word2Vec.\
@@ -47,4 +47,4 @@ class SimpleProcessor(Processor):
 
         log.info("Accuracy: %0.2f (+/- %0.2f)" % (mean_score, scores.std() * 2))
 
-        log.info("SimpleProcessor ended")
+        log.info("Word2VecProcessor ended")

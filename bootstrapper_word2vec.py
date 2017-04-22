@@ -5,7 +5,7 @@ import sys
 import logging
 
 from data.options import Options
-from processors.simple_processor import SimpleProcessor
+from processors.word2vec_processor import Word2VecProcessor
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,7 +17,7 @@ log = logging.getLogger(__name__)
 
 def main(argv):
     options = parse_args(argv)
-    processor = SimpleProcessor(options)
+    processor = Word2VecProcessor(options)
     processor.process()
 
 

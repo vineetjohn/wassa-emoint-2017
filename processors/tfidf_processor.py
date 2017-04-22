@@ -1,7 +1,7 @@
 import logging
 
 from sklearn import model_selection
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LinearRegression
 
 from processors.abstract_processor import Processor
@@ -10,10 +10,10 @@ from utils import file_helper
 log = logging.getLogger(__name__)
 
 
-class NGramProcessor(Processor):
+class TfIdfProcessor(Processor):
 
     def process(self):
-        log.info("NGramProcessor begun")
+        log.info("TfIdfProcessor begun")
 
         input_tweets = file_helper.read_input_data(self.options.input_file_path)
 
@@ -23,7 +23,7 @@ class NGramProcessor(Processor):
             tweet_text.append(input_tweet.text)
             y_train.append(input_tweet.intensity)
 
-        vectorizer = CountVectorizer(ngram_range=(1, 2))
+        vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5, stop_words='english')
         x_train = vectorizer.fit_transform(tweet_text)
 
         scores = \
@@ -34,4 +34,4 @@ class NGramProcessor(Processor):
 
         log.info("Accuracy: %0.2f (+/- %0.2f)" % (mean_score, scores.std() * 2))
 
-        log.info("NGramProcessor ended")
+        log.info("TfIdfProcessor ended")
