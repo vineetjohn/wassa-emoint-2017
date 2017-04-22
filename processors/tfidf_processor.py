@@ -3,6 +3,7 @@ import logging
 from sklearn import model_selection
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LinearRegression
+from sklearn.svm import LinearSVR
 
 from processors.abstract_processor import Processor
 from utils import file_helper
@@ -28,7 +29,7 @@ class TfIdfProcessor(Processor):
 
         scores = \
             model_selection.cross_val_score(
-                LinearRegression(), x_train, y_train, cv=10, scoring='r2'
+                LinearSVR(), x_train, y_train, cv=10, scoring='r2'
             )
         mean_score = scores.mean()
 
