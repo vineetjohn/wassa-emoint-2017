@@ -22,8 +22,10 @@ def main(argv):
 
 
 def parse_args(argv):
-    parser = ArgumentParser(prog="news-extraction")
+    parser = ArgumentParser(prog="wassa-task")
     parser.add_argument('--input_file_path', metavar='Input File Path',
+                        type=str, required=True)
+    parser.add_argument('--wv_model_path', metavar='Word2Vec File Path',
                         type=str, required=True)
 
     return parser.parse_args(argv, namespace=Options())
