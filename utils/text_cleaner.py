@@ -1,8 +1,8 @@
 import re
 
 
-def clean_str(string, TREC=False):
-
+def clean_str(string):
+    string = re.sub(r"@[A-Za-z0-9_s(),!?\'\`]+", "", string)
     string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
     string = re.sub(r"\'s", " \'s", string)
     string = re.sub(r"\'ve", " \'ve", string)
