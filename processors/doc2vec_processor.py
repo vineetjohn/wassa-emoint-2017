@@ -33,7 +33,7 @@ class Doc2VecProcessor(Processor):
         log.debug("Computing model")
         scores = \
             model_selection.cross_val_score(
-                LinearRegression(), x_train, y_train, cv=10, scoring='r2'
+                LinearSVR(), x_train, y_train, cv=10, scoring='r2'
             )
         mean_score = scores.mean()
 
