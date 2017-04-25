@@ -20,3 +20,12 @@ def read_s140_lexicon(lexicon_file_path):
             line = line.strip()
             array = line.split('\t')
             yield S140Unigram(array[0], float(array[1]))
+
+
+def read_test_data(input_file_path):
+
+    with open(input_file_path) as input_file:
+        for line in input_file:
+            line = line.strip()
+            array = line.split('\t')
+            yield Tweet(array[0], array[1], array[2], array[3])
