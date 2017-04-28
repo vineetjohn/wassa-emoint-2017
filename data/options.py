@@ -1,4 +1,5 @@
 class Options(object):
-    input_file_path = None
+    training_data_file_path = None
+    test_data_file_path = None
     wv_model_path = None
     lexicon_file_path = None
