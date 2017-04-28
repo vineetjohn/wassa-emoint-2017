@@ -36,6 +36,8 @@ class TfIdfProcessor(Processor):
 
         if self.options.test_data_file_path:
 
+            log.info("Making predictions for the test dataset")
+
             test_tweets = list(file_helper.read_test_data(self.options.test_data_file_path))
             tweet_test = list()
             for tweet in test_tweets:
