@@ -21,7 +21,7 @@ class Word2VecProcessor(Processor):
             load_word2vec_format(
                 self.options.wv_model_path, binary=True
             )
-        input_tweets = file_helper.read_input_data(self.options.input_file_path)
+        input_tweets = file_helper.read_input_data(self.options.training_data_file_path)
 
         x_train = list()
         y_train = list()

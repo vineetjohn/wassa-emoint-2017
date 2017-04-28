@@ -23,8 +23,10 @@ def main(argv):
 
 def parse_args(argv):
     parser = ArgumentParser(prog="wassa-task")
-    parser.add_argument('--input_file_path', metavar='Input File Path',
+    parser.add_argument('--training_data_file_path', metavar='Train Data File Path',
                         type=str, required=True)
+    parser.add_argument('--test_data_file_path', metavar='Test Data File Path',
+                        type=str, required=False)
 
     return parser.parse_args(argv, namespace=Options())
 

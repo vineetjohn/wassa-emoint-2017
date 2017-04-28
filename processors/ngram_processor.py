@@ -16,7 +16,7 @@ class NGramProcessor(Processor):
     def process(self):
         log.info("NGramProcessor begun")
 
-        input_tweets = file_helper.read_input_data(self.options.input_file_path)
+        input_tweets = file_helper.read_input_data(self.options.training_data_file_path)
 
         y_train = list()
         tweet_text = list()

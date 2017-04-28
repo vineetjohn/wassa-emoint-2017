@@ -17,8 +17,8 @@ class Doc2VecProcessor(Processor):
     def process(self):
         log.info("Doc2VecProcessor begun")
 
-        input_tweets = file_helper.read_input_data(self.options.input_file_path)
-        input_tweets_labeled = LabeledLineSentence(self.options.input_file_path)
+        input_tweets = file_helper.read_input_data(self.options.training_data_file_path)
+        input_tweets_labeled = LabeledLineSentence(self.options.training_data_file_path)
         model = Doc2Vec(input_tweets_labeled, iter=20, workers=8)
 
         x_train = list()

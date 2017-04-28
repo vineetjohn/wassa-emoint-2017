@@ -16,7 +16,7 @@ class S140Processor(Processor):
     def process(self):
         log.info("S140Processor begun")
 
-        input_tweets = file_helper.read_input_data(self.options.input_file_path)
+        input_tweets = file_helper.read_input_data(self.options.training_data_file_path)
         s140_lexicon = list(file_helper.read_s140_lexicon(self.options.lexicon_file_path))
 
         y_train = list()
