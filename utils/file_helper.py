@@ -28,4 +28,5 @@ def read_test_data(training_data_file_path):
         for line in input_file:
             line = line.strip()
             array = line.split('\t')
-            yield Tweet(array[0], array[1], array[2], array[3])
+            yield Tweet(array[0], text_cleaner.clean_str(array[1]),
+                        array[2], None)

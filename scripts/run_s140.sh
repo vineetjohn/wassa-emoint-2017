@@ -9,4 +9,4 @@ LEXICON_FILE_PATH="/home/v2john/Documents/Sentiment140-Lexicon/unigrams-pmilexic
 /usr/bin/python3 "$CODEDIR"/bootstrap_s140.py \
 --training_data_file_path "$TRAINING_DATA_FILE_PATH" \
 --lexicon_file_path "$LEXICON_FILE_PATH" \
---test_data_file_path "$TEST_DATA_FILE_PATH" \
+--test_data_file_path "$TEST_DATA_FILE_PATH"
