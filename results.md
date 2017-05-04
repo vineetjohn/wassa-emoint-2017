@@ -1,12 +1,5 @@
 # Results - WASSA 2017 EmoInt 
 
-
-fear - GBR
-pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
-(0.56360946502302101, 0.50732805258768177, 0.53513370142441596, 0.52117313550595246)
-
-
-
 ## Keras NN - polynomial linear reg + word2vec embedding (304 features)
 
 anger
@@ -32,3 +25,27 @@ pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
 0.587189891146 0.584310655428 0.420611750611 0.420552450057
 
 ​
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec embedding (323 features)
+
+
+anger
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.574913084482 0.555563854364 0.421183111691 0.450580799362
+
+fear
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.594464880318 0.544222751852 0.534740205821 0.518208063738
+
+sadness
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.533999324202 0.527642090238 0.211824860544 0.162130602022
+
+joy
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.717588899781 0.708990987417 0.713207847792 0.713613048869
+
+===============================
+
+Average Scores
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.605241547196 0.584104920968 0.470239006462 0.461133128498
