@@ -51,7 +51,7 @@ pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
 0.605241547196 0.584104920968 0.470239006462 0.461133128498
 
 
-## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec (twitter) embedding (323 features)
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec (twitter) embedding (423 features)
 
 anger
 pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
@@ -76,3 +76,51 @@ pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
 0.594367104494 0.56882039976 0.486796538842 0.447407905429
 
 
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec (twitter + google news) embedding (723 features)
+
+anger
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.640387022935 0.548987224797 0.522552749584 0.482759721196
+
+fear
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.584234165596 0.553339292653 0.400633029723 0.356117473769
+
+sadness
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.532965920615 0.557062583191 0.272650979817 0.192492137981
+
+joy
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.688609002808 0.691022432026 0.621842068901 0.696286933384
+
+===============================
+
+Average Scores
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.611549027989 0.587602883167 0.454419707006 0.431914066583
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + ensemble features (joy & sadness[google], fear[twitter], anger[google+  twitter])
+
+
+anger
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.641303249988 0.547943118141 0.520555532818 0.482607933829
+
+fear
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.640770447766 0.612774988643 0.494386521495 0.470890460112
+
+sadness
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.533707189418 0.525670843103 0.210719221791 0.162130602022
+
+joy
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.717569412842 0.709441418684 0.721403801514 0.721110900014
+
+===============================
+
+Average Scores
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.633337575004 0.598957592143 0.486766269404 0.459184973994
