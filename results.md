@@ -170,3 +170,32 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.633337575004 | 0.598957592143 | 0.486766269404 | 0.459184973994 |
+
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + ensemble features (joy[google], fear[twitter], anger & sadness[google+twitter])
+
+### anger
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.641303249988 | 0.547943118141 | 0.520555532818 | 0.482607933829 |
+
+### fear
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.640770447766 | 0.612774988643 | 0.494386521495 | 0.470890460112 |
+
+### sadness
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.532844404765 | 0.555372942789 | 0.27294180203 | 0.192492137981 |
+
+### joy
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.717569412842 | 0.709441418684 | 0.721403801514 | 0.721110900014 |
+
+### Average Scores
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.63312187884 | 0.606383117064 | 0.502321914464 | 0.466775357984 |
+
