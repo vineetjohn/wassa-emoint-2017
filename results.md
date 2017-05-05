@@ -104,6 +104,35 @@
 
 ---
 
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + glove (twitter) embedding (223 features)
+
+### anger
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.612036860479 | 0.552446724054 | 0.467200029867 | 0.354802970695 |
+
+### fear
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.617835476757 | 0.598443840634 | 0.539385152594 | 0.525558970829 |
+
+### sadness
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.480054127113 | 0.473336454883 | 0.342865345145 | 0.242082646714 |
+
+### joy
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.749060042387 | 0.75173326247 | 0.572006301327 | 0.561933546646 |
+
+### Average Scores
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.614746626684 | 0.59399007051 | 0.480364207233 | 0.421094533721 |
+
+---
+
 ## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec (twitter + google news) embedding (723 features)
 
 ### anger
