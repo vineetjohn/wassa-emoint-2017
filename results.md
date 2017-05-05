@@ -25,7 +25,7 @@ pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
 0.587189891146 0.584310655428 0.420611750611 0.420552450057
 
 ​
-## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec embedding (323 features)
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec (google news) embedding (323 features)
 
 
 anger
@@ -49,3 +49,30 @@ pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
 Average Scores
 pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
 0.605241547196 0.584104920968 0.470239006462 0.461133128498
+
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + word2vec (twitter) embedding (323 features)
+
+anger
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.594034333503 0.488368217018 0.529485558742 0.435629743698
+
+fear
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.640446207263 0.612774988643 0.490244553909 0.470890460112
+
+sadness
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.516944362888 0.518882638684 0.356863335856 0.27446828507
+
+joy
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.62604351432 0.655255754696 0.570592706861 0.608643132834
+
+===============================
+
+Average Scores
+pears_corr,spear_corr,pears_corr_range_05_1,spear_corr_range_05_1
+0.594367104494 0.56882039976 0.486796538842 0.447407905429
+
+
