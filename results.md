@@ -167,7 +167,7 @@
 
 ---
 
-## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + ensemble features (joy & sadness[google], fear[twitter], anger[google+  twitter])
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag) + ensemble features (joy & sadness[google], fear[twitter], anger[google+twitter])
 
 
 ### anger
@@ -227,4 +227,25 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.63312187884 | 0.606383117064 | 0.502321914464 | 0.466775357984 |
+
+
+
+## Attempts to boost sadness scores
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram)) + google(news)+glove]
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.54436432012812697 | 0.59033664197120983 | 0.2476506614084644 | 0.17812101096005128 |
+
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram + pairs)) + google(news)+glove]
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.53687757035684891 | 0.60214930337344574 | 0.24565564168582563 | 0.22406813537815543 |
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram + pairs)) + google(news)]
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.51228109128 | 0.536609041491 | 0.12476581186 | 0.0485784575346 |
 
