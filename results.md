@@ -249,3 +249,14 @@
 | --- | --- | --- | --- |
 | 0.51228109128 | 0.536609041491 | 0.12476581186 | 0.0485784575346 |
 
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram + pairs) + afflex(unigram + bigram) + google(news))]
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.508618853018 | 0.526397092047 | 0.130309780381 | 0.0635568152744 |
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram + pairs) + afflex(unigram + bigram) + google(news) + sentiwordnet)]
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.503523032036 | 0.52947994471 | 0.24780661272 | 0.151807679795 |
