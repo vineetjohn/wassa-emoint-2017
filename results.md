@@ -279,3 +279,10 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.574983305751 | 0.597421274531 | 0.258583158313 | 0.235403108803 |
+
+
+## Consolidated - Sadness
+
+| Features | Training Pearson Co-efficient | Training Spearman Co-efficient | Training Pearson Co-efficient (0.5-1) | Training Spearman Co-efficient (0.5-1) | Pearson Co-efficient | Spearman Co-efficient | Pearson Co-efficient (0.5-1) | Spearman Co-efficient (0.5-1) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Emotion Intensity | 0.442680927829 | 0.427450830852 | 0.316163738208 | 0.2875911975 | 0.385976779751 | 0.377978509278 | 0.0703519679791 | 0.0973366491644 |
