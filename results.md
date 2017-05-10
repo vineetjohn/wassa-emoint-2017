@@ -283,6 +283,12 @@
 
 ## Consolidated - Sadness
 
+All training accuracies are 5-fold cross-validated
+
 | Features | Training Pearson Co-efficient | Training Spearman Co-efficient | Training Pearson Co-efficient (0.5-1) | Training Spearman Co-efficient (0.5-1) | Pearson Co-efficient | Spearman Co-efficient | Pearson Co-efficient (0.5-1) | Spearman Co-efficient (0.5-1) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Emotion Intensity | 0.442680927829 | 0.427450830852 | 0.316163738208 | 0.2875911975 | 0.385976779751 | 0.377978509278 | 0.0703519679791 | 0.0973366491644 |
+| Hashtag AffNegLex | 0.15520964318 | 0.15419073552 | -0.00359177113123 | -0.0142644603518 | 0.153676522767 | 0.198636497005 | -0.0773744450201 | -0.0807616856512 |
+| Emoticon AffNegLex | 0.512693918931 | 0.508883695215 | 0.25300893837 | 0.236133970606 | 0.512693918931 | 0.508883695215 | 0.25300893837 | 0.236133970606 |
+| Emoticon Sentiment | 0.560408136441 | 0.55353645987 | 0.328826812316 | 0.307461319352 | 0.532916549661 | 0.532911581855 | 0.401649412521 | 0.352193817126 |
+| Hashtag EmoInt | 0.0307510568383 | 0.0477150378658 | -0.0271677982522 | -0.0267671460499 | -0.192467205705 | -0.140942534207 | -0.172087580917 | -0.149960386449 |
