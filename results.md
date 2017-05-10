@@ -273,3 +273,9 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.566089382581 | 0.578701837453 | 0.169842326696 | 0.199778906611 |
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram + pairs) + afflex(unigram + bigram) + google(news) + hashtag-sentiment-lexicon(unigram + bigram))]
+### sadness
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.574983305751 | 0.597421274531 | 0.258583158313 | 0.235403108803 |
