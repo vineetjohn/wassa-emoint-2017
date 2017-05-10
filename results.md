@@ -260,3 +260,9 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.503523032036 | 0.52947994471 | 0.24780661272 | 0.151807679795 |
+
+
+## Stats - polynomial linear reg (emotion int + sentiment + hashtag + emoticon (unigram + bigram + pairs) + afflex(unigram + bigram) + google(news) + hashtag-affneglex)]
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.506155732811 | 0.504416945423 | 0.158078573304 | 0.118207580001 |
