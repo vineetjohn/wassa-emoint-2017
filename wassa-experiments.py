@@ -911,7 +911,7 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
     index = 3
     if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
-            tmp_vector = DataFrame(list(map(lambda x: get_emo_int_vector(x, wv_model_2, w2v_dimensions_2), tweet_list)))
+            tmp_vector = DataFrame(list(map(lambda x: get_emo_int_vector(x), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
