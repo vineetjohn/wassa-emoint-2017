@@ -156,6 +156,7 @@ def loadGloveModel(gloveFile):
 
 
 wv_model_path_2 = word_vector_path + "glove.twitter.27B.200d.txt"
+print("Loading Glove model")
 wv_model_2 = loadGloveModel(wv_model_path_2)
 
 
@@ -473,8 +474,13 @@ def get_emoticon_lexicon_pairs_dict():
 
 # In[32]:
 
+print("Loading emoticon_lexicon_unigram_dict")
 emoticon_lexicon_unigram_dict = get_emoticon_lexicon_unigram_dict()
+
+print("Loading emoticon_lexicon_bigram_dict")
 emoticon_lexicon_bigram_dict = get_emoticon_lexicon_bigram_dict()
+
+print("Loading emoticon_lexicon_pairs_dict")
 emoticon_lexicon_pairs_dict = get_emoticon_lexicon_pairs_dict()
 
 
@@ -577,17 +583,16 @@ def get_emoticon_afflex_bigram_dict():
 
 
 # In[65]:
-
+print("Loading emoticon_afflex_unigram_dict")
 emoticon_afflex_unigram_dict = get_emoticon_afflex_unigram_dict()
 
 
 # In[66]:
-
+print("Loading emoticon_afflex_bigram_dict")
 emoticon_afflex_bigram_dict = get_emoticon_afflex_bigram_dict()
 
 
 # In[67]:
-
 poly_emoticon_lexicon = PolynomialFeatures(5)
 
 
@@ -665,17 +670,16 @@ def get_hashtag_affneglex_bigram_dict():
 
 
 # In[69]:
-
+print("Loading hashtag_affneglex_unigram_dict")
 hashtag_affneglex_unigram_dict = get_hashtag_affneglex_unigram_dict()
 
 
 # In[70]:
-
+print("Loading hashtag_affneglex_bigram_dict")
 hashtag_affneglex_bigram_dict = get_hashtag_affneglex_bigram_dict()
 
 
 # In[71]:
-
 poly_hashtag_sent_affneglex = PolynomialFeatures(5)
 
 
@@ -776,16 +780,19 @@ def get_hash_sent_lex_pairs_dict():
 
 # In[76]:
 
+print("Loading hash_sent_lex_unigram_dict")
 hash_sent_lex_unigram_dict = get_hash_sent_lex_unigram_dict()
 
 
 # In[77]:
 
+print("Loading hash_sent_lex_bigram_dict")
 hash_sent_lex_bigram_dict = get_hash_sent_lex_bigram_dict()
 
 
 # In[78]:
 
+print("Loading hash_sent_lex_pairs_dict")
 hash_sent_lex_pairs_dict = get_hash_sent_lex_pairs_dict()
 
 
@@ -1028,8 +1035,11 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
     print("Working on: " + emotion)
     tweet_train, tweet_test, score_train, y_gold = load_all_data(emotion)
 
+    print("Loading word_intensities")
     word_intensities = get_word_affect_intensity_dict(emotion)
+    print("Loading affect_presence_word_list")
     affect_presence_word_list = get_affect_presence_list(emotion)
+    print("Loading hashtag_emotion_intensities")
     hashtag_emotion_intensities = get_hashtag_emotion_intensity(emotion)
 
     result_file_path = "/home/v2john/" + emotion + "_tests.tsv"
@@ -1054,8 +1064,11 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
         print("Current test: " + str(i) + "/" + str(num_test))
         bin_string = '{0:011b}'.format(i)
 
+        print("Vectorizing data")
         x_train = vectorize_tweets(tweet_train, bin_string, train_vector_dict)
         x_test = vectorize_tweets(tweet_test, bin_string, test_vector_dict)
+
+        print("Training and testing models")
         train_scores, test_scores = run_test(x_train, score_train, x_test, y_gold)
 
         with open(result_file_path, 'a+') as result_file:
