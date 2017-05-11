@@ -143,7 +143,6 @@ wv_model_1 = gensim.models.KeyedVectors.load_word2vec_format(wv_model_path_1, bi
 # In[60]:
 
 def loadGloveModel(gloveFile):
-    print("Loading Glove Model")
     f = open(gloveFile, 'r')
     model = {}
     for line in f:
