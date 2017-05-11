@@ -20,7 +20,7 @@ import pandas as pd
 from pandas import DataFrame
 
 
-word_vector_path = "/home/v2john/Documents/"
+word_vector_path = "/home/v2john/"
 wassa_home = "/home/v2john/WASSA-Task/"
 
 
