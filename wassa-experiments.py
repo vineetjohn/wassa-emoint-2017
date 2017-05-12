@@ -887,7 +887,7 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
     if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = \
-                DataFrame(map(lambda x: get_word2vec_embedding(x, wv_model, w2v_dimensions), tweet_list))
+                DataFrame(list(map(lambda x: get_word2vec_embedding(x, wv_model, w2v_dimensions), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
