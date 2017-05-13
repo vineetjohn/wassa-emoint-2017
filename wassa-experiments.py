@@ -7,6 +7,7 @@ import gensim
 import numpy as np
 import re
 import html
+import time
 
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn import ensemble, model_selection
@@ -1062,6 +1063,7 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
     for i in range(1, num_test + 1):
         print("Current test: " + str(i) + "/" + str(num_test))
         bin_string = '{0:011b}'.format(i)
+        start_time = time.time()
 
         print("Vectorizing data")
         x_train = vectorize_tweets(tweet_train, bin_string, train_vector_dict)
@@ -1083,3 +1085,4 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
                 str(test_scores[2]) + "\t" +
                 str(test_scores[3]) + "\n"
             )
+        print("--- %s seconds ---" % (time.time() - start_time))
