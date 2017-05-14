@@ -2,39 +2,43 @@
 
 ## [Anger]()
 
-feature_string: 11111111111
+### feature_string: 11111111111
 828.53 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.684205512951 | 0.666972518799 | 0.516271907336 | 0.503773087596 |
-In [78]:
 
 ## [Fear]()
 
-feature_string: 11111111111
+### feature_string: 11111111111
 1093.46 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.72538522051 | 0.711519039293 | 0.552840701766 | 0.50819295965 |
 
 ## [Joy]()
 
-feature_string: 11111111111
+### feature_string: 11111111111
 1349.87 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.724478851489 | 0.711582430492 | 0.606927917475 | 0.586228329357 |
 
 ## [Sadness](https://drive.google.com/open?id=1gplJXbCfvMcSmmY2iHF7OAKxhLicBFBCZdyDIIkRU00)
 
-feature_string: 11111111111
+### feature_string: 11111111111
 1589.97 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.658452518694 | 0.653472030407 | 0.440383994463 | 0.408084514646 |
 
-feature_string: 01111011110
+### feature_string: 01111011110
 947.90 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.675676060542 | 0.675053967767 | 0.473841730144 | 0.436801680113 |
