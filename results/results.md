@@ -4,12 +4,14 @@
 
 ### feature_string: 11111111111, 30000 estimators
 2312.67 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.693734682532 | 0.663562801458 | 0.541903165218 | 0.511157982413 |
 
 ### feature_string: 11111111111
 8954.50 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.696108057095 | 0.670450185989 | 0.537722975038 | 0.512071147925 |
@@ -32,6 +34,7 @@
 
 ### fear, feature_string: 11110101110
 3338.97 seconds
+
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.722380775558 | 0.707741534746 | 0.546021032251 | 0.511808565966 |
@@ -42,13 +45,6 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.72538522051 | 0.711519039293 | 0.552840701766 | 0.50819295965 |
-
-### feature_string: 00100000100
-180.72 seconds
-
-| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
-| --- | --- | --- | --- |
-| 0.683859808339 | 0.662041550999 | 0.538505326995 | 0.499209085836 |
 
 ## [Joy]()
 
