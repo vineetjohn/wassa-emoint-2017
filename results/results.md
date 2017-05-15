@@ -1,13 +1,26 @@
 # Results - WASSA 2017 EmoInt 
 
-## [Anger]()
+## [Anger](https://drive.google.com/open?id=1zDTfWOpq2ez1wmS4RKK0IXkZS4MKKcF1PPVNvjwmlKI)
 
-### feature_string: 11111111111
+### anger, feature_string: 11111111111, 30000 estimators
+2312.67 seconds
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.693734682532 | 0.663562801458 | 0.541903165218 | 0.511157982413 |
+
+### feature_string: 11111111111, , 10000 estimators
 828.53 seconds
 
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.684205512951 | 0.666972518799 | 0.516271907336 | 0.503773087596 |
+
+### feature_string: 11111001001, 30000 estimators
+645.66 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.675062377051 | 0.651664274052 | 0.491476107879 | 0.472431363132 |
 
 ## [Fear]()
 
@@ -18,6 +31,13 @@
 | --- | --- | --- | --- |
 | 0.72538522051 | 0.711519039293 | 0.552840701766 | 0.50819295965 |
 
+### feature_string: 00100000100
+180.72 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.683859808339 | 0.662041550999 | 0.538505326995 | 0.499209085836 |
+
 ## [Joy]()
 
 ### feature_string: 11111111111
@@ -26,6 +46,13 @@
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.724478851489 | 0.711582430492 | 0.606927917475 | 0.586228329357 |
+
+### feature_string: 11110111001
+678.02 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.716061958579 | 0.693918237381 | 0.605287200157 | 0.576135739675 |
 
 ## [Sadness](https://drive.google.com/open?id=1gplJXbCfvMcSmmY2iHF7OAKxhLicBFBCZdyDIIkRU00)
 
