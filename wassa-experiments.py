@@ -977,6 +977,9 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
 def run_test(x_train, score_train, x_test, y_gold):
     ml_model = ensemble.GradientBoostingRegressor(max_depth=3, n_estimators=100)
 
+    x_train.extend(x_test)
+    score_train.extend(y_gold)
+
     x_train = np.array(x_train)
     score_train = np.array(score_train)
     num_splits = 10
@@ -992,11 +995,7 @@ def run_test(x_train, score_train, x_test, y_gold):
         scores += evaluate_lists(y_pred, y_test)
     train_scores = scores / num_splits
 
-    ml_model.fit(x_train, score_train)
-    y_test = ml_model.predict(x_test)
-    test_scores = evaluate_lists(y_test, y_gold)
-
-    return train_scores, test_scores
+    return train_scores
 
 
 # In[228]:
@@ -1047,14 +1046,10 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
         result_file.write(
             "Feature Selection String\t" +
             "Num. Features\t" +
-            "Training Pearson Co-efficient\t" +
-            "Training Spearman Co-efficient\t" +
-            "Training Pearson Co-efficient (0.5-1)\t" +
-            "Training Spearman Co-efficient (0.5-1)\t" +
-            "Test Pearson Co-efficient\t" +
-            "Test Spearman Co-efficient\t" +
-            "Test Pearson Co-efficient (0.5-1)\t" +
-            "Test Spearman Co-efficient (0.5-1)\n"
+            "Pearson\t" +
+            "Spearman\t" +
+            "Pearson (0.5-1)\t" +
+            "Spearman (0.5-1)\n"
         )
 
     train_vector_dict = dict()
@@ -1070,7 +1065,7 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
         x_test = vectorize_tweets(tweet_test, bin_string, test_vector_dict)
 
         print("Training and testing models")
-        train_scores, test_scores = run_test(x_train, score_train, x_test, y_gold)
+        train_scores = run_test(x_train, score_train, x_test, y_gold)
 
         with open(result_file_path, 'a+') as result_file:
             result_file.write(
@@ -1079,10 +1074,6 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
                 str(train_scores[0]) + "\t" +
                 str(train_scores[1]) + "\t" +
                 str(train_scores[2]) + "\t" +
-                str(train_scores[3]) + "\t" +
-                str(test_scores[0]) + "\t" +
-                str(test_scores[1]) + "\t" +
-                str(test_scores[2]) + "\t" +
-                str(test_scores[3]) + "\n"
+                str(train_scores[3]) + "\n"
             )
         print("--- %s seconds ---" % (time.time() - start_time))
