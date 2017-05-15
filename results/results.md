@@ -1,48 +1,95 @@
 # Results - WASSA 2017 EmoInt 
 
-## [Anger]()
+## [Anger](https://drive.google.com/open?id=1zDTfWOpq2ez1wmS4RKK0IXkZS4MKKcF1PPVNvjwmlKI)
 
-### feature_string: 11111111111
+### feature-string: 11111111111, 30000 estimators
+2312.67 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.693734682532 | 0.663562801458 | 0.541903165218 | 0.511157982413 |
+
+### feature-string: 11111111111
+8954.50 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.696108057095 | 0.670450185989 | 0.537722975038 | 0.512071147925 |
+
+### feature-string: 11111111111, , 10000 estimators
 828.53 seconds
 
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.684205512951 | 0.666972518799 | 0.516271907336 | 0.503773087596 |
 
-## [Fear]()
+### anger, feature-string: 11111001001, estimators: 450
+800.23 seconds
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.695802799781 | 0.678593909769 | 0.513535811701 | 0.51571479042 |
 
-### feature_string: 11111111111
+### feature-string: 11111001001, 30000 estimators
+645.66 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.675062377051 | 0.651664274052 | 0.491476107879 | 0.472431363132 |
+
+## [Fear](https://drive.google.com/open?id=1c0mmuD-dGDhhdPmFFtdtgWmzciHGeVpdQlYJgmld3Fw)
+
+### fear, feature-string: 11110101110
+3338.97 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.722380775558 | 0.707741534746 | 0.546021032251 | 0.511808565966 |
+
+### feature-string: 11111111111
 1093.46 seconds
 
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.72538522051 | 0.711519039293 | 0.552840701766 | 0.50819295965 |
 
-## [Joy]()
+## [Joy](https://drive.google.com/open?id=1JYMK9-SiKvUfIiBGVRI9h2W4xPhHbe9nd7OPjZym50k)
 
-### feature_string: 11111111111
+### feature-string: 11111111111
 1349.87 seconds
 
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.724478851489 | 0.711582430492 | 0.606927917475 | 0.586228329357 |
 
+### feature-string: 11110111001
+678.02 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.716061958579 | 0.693918237381 | 0.605287200157 | 0.576135739675 |
+
 ## [Sadness](https://drive.google.com/open?id=1gplJXbCfvMcSmmY2iHF7OAKxhLicBFBCZdyDIIkRU00)
 
-### feature_string: 11111111111
+### feature-string: 11111111111
 1589.97 seconds
 
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.658452518694 | 0.653472030407 | 0.440383994463 | 0.408084514646 |
 
-### feature_string: 01111011110
+### feature-string: 01111011110
 947.90 seconds
 
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.675676060542 | 0.675053967767 | 0.473841730144 | 0.436801680113 |
 
+### feature-string: 01111011110
+1144.26 seconds
+
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.671341789731 | 0.664596647361 | 0.459009400607 | 0.43289810826 |
 
 ---
 
