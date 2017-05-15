@@ -1,7 +1,3 @@
-# # Define evaluation logic
-
-# In[42]:
-
 import scipy.stats
 import gensim
 import numpy as np
@@ -10,7 +6,7 @@ import html
 import time
 
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn import ensemble, model_selection
+from sklearn import model_selection
 
 from nltk import word_tokenize
 from nltk import bigrams
@@ -19,6 +15,8 @@ from nltk.corpus import sentiwordnet as swn
 
 import pandas as pd
 from pandas import DataFrame
+
+from xgboost import XGBRegressor
 
 
 word_vector_path = "/home/v2john/"
@@ -869,7 +867,7 @@ def get_sentiment_hash_sent_lex_vector(tweet):
 
 # In[225]:
 
-num_test = 2048
+num_test = 2047
 
 
 # In[226]:
@@ -975,7 +973,7 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
 
 # In[227]:
 def run_test(x_train, score_train, x_test, y_gold):
-    ml_model = ensemble.GradientBoostingRegressor(max_depth=3, n_estimators=100)
+    ml_model = XGBRegressor()
 
     x_train.extend(x_test)
     score_train.extend(y_gold)
@@ -1055,7 +1053,7 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
     train_vector_dict = dict()
     test_vector_dict = dict()
 
-    for i in range(1, num_test + 1):
+    for i in range(num_test, 0, -1):
         print("Current test: " + str(i) + "/" + str(num_test))
         bin_string = '{0:011b}'.format(i)
         start_time = time.time()
