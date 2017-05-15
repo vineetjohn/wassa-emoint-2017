@@ -2,11 +2,17 @@
 
 ## [Anger](https://drive.google.com/open?id=1zDTfWOpq2ez1wmS4RKK0IXkZS4MKKcF1PPVNvjwmlKI)
 
-### anger, feature_string: 11111111111, 30000 estimators
+### feature_string: 11111111111, 30000 estimators
 2312.67 seconds
 | pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
 | --- | --- | --- | --- |
 | 0.693734682532 | 0.663562801458 | 0.541903165218 | 0.511157982413 |
+
+### feature_string: 11111111111
+8954.50 seconds
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.696108057095 | 0.670450185989 | 0.537722975038 | 0.512071147925 |
 
 ### feature_string: 11111111111, , 10000 estimators
 828.53 seconds
@@ -23,6 +29,12 @@
 | 0.675062377051 | 0.651664274052 | 0.491476107879 | 0.472431363132 |
 
 ## [Fear]()
+
+### fear, feature_string: 11110101110
+3338.97 seconds
+| pears-corr | spear-corr | pears-corr-range-05-1 | spear-corr-range-05-1 |
+| --- | --- | --- | --- |
+| 0.722380775558 | 0.707741534746 | 0.546021032251 | 0.511808565966 |
 
 ### feature_string: 11111111111
 1093.46 seconds
