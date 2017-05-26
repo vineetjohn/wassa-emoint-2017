@@ -973,27 +973,17 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
 
 # In[227]:
 def run_test(x_train, score_train, x_test, y_gold):
-    ml_model = XGBRegressor()
-
-    x_train.extend(x_test)
-    score_train.extend(y_gold)
+    ml_model = XGBRegressor(seed=0)
 
     x_train = np.array(x_train)
     score_train = np.array(score_train)
-    num_splits = 10
 
-    kf = model_selection.KFold(n_splits=num_splits, shuffle=True)
+    ml_model.fit(x_train, score_train)
+    y_pred = ml_model.predict(x_test)
 
-    scores = np.zeros(4)
-    for train_index, test_index in kf.split(x_train):
-        X_train, X_test = x_train[train_index], x_train[test_index]
-        y_train, y_test = score_train[train_index], score_train[test_index]
-        ml_model.fit(X_train, y_train)
-        y_pred = ml_model.predict(X_test)
-        scores += evaluate_lists(y_pred, y_test)
-    train_scores = scores / num_splits
+    score = evaluate_lists(y_pred, y_gold)
 
-    return train_scores
+    return score
 
 
 # In[228]:
@@ -1001,28 +991,29 @@ def run_test(x_train, score_train, x_test, y_gold):
 def load_all_data(emotion):
     training_data_file_path = \
         wassa_home + "dataset/" + emotion + "-ratings-0to1.train.txt"
-    test_data_file_path = \
-        wassa_home + "dataset/" + emotion + "-ratings-0to1.dev.target.txt"
-    gold_set_path = \
+    dev_set_path = \
         wassa_home + "dataset/gold-set/" + emotion + "-ratings-0to1.dev.gold.txt"
-
-    training_tweets = read_training_data(training_data_file_path)
+    test_data_file_path = \
+        wassa_home + "dataset/" + emotion + "-ratings-0to1.test.gold.txt"
 
     score_train = list()
     tweet_train = list()
+    y_gold = list()
+
+    training_tweets = read_training_data(training_data_file_path)
     for tweet in training_tweets:
         tweet_train.append(tweet.text)
         score_train.append(float(tweet.intensity))
 
-    test_tweets = read_test_data(test_data_file_path)
-    tweet_test = list()
+    dev_tweets = read_training_data(dev_set_path)
+    for tweet in dev_tweets:
+        tweet_train.append(tweet.text)
+        score_train.append(float(tweet.intensity))
+
+    test_tweets = read_training_data(test_data_file_path)
     for tweet in test_tweets:
         tweet_test.append(tweet.text)
-
-    gold_tweets = read_training_data(gold_set_path)
-    y_gold = list()
-    for tweet in gold_tweets:
-        y_gold.append(tweet.intensity)
+        y_gold.append(float(tweet.intensity))
 
     return tweet_train, tweet_test, score_train, y_gold
 
