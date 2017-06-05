@@ -3,10 +3,10 @@ import gensim
 import numpy as np
 import re
 import html
+import json
 import time
 
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn import model_selection
 
 from nltk import word_tokenize
 from nltk import bigrams
@@ -145,10 +145,13 @@ def loadGloveModel(gloveFile):
     f = open(gloveFile, 'r')
     model = {}
     for line in f:
-        splitLine = line.split()
-        word = splitLine[0]
-        embedding = [float(val) for val in splitLine[1:]]
-        model[word] = np.array(embedding)
+        try:
+            splitLine = line.split()
+            word = splitLine[0]
+            embedding = [float(val) for val in splitLine[1:]]
+            model[word] = np.array(embedding)
+        except Exception as e:
+            print("Skipping line")
     print("Done.", len(model), " words loaded!")
     return model
 
@@ -157,12 +160,29 @@ wv_model_path_2 = word_vector_path + "glove.twitter.27B.200d.txt"
 print("Loading Glove model")
 wv_model_2 = loadGloveModel(wv_model_path_2)
 
+wv_model_path_3 = word_vector_path + "glove.6B.300d.txt"
+wv_model_3 = loadGloveModel(wv_model_path_3)
+
+
+# In[16]:
+
+wv_model_path_4 = word_vector_path + "glove.42B.300d.txt"
+wv_model_4 = loadGloveModel(wv_model_path_4)
+
+
+# In[17]:
+
+wv_model_path_5 = word_vector_path + "glove.840B.300d.txt"
+wv_model_5 = loadGloveModel(wv_model_path_5)
 
 # In[61]:
 
 w2v_dimensions = len(wv_model['word'])
 w2v_dimensions_1 = len(wv_model_1['word'])
 w2v_dimensions_2 = len(wv_model_2['word'])
+w2v_dimensions_3 = len(wv_model_3['word'])
+w2v_dimensions_4 = len(wv_model_4['word'])
+w2v_dimensions_5 = len(wv_model_5['word'])
 print(w2v_dimensions, w2v_dimensions_1, w2v_dimensions_2)
 
 
@@ -181,7 +201,7 @@ def clean_str(string):
     string = string.replace("_NEG", "")
     string = string.replace("_NEGFIRST", "")
     string = re.sub(r"@[A-Za-z0-9_s(),!?\'\`]+", "", string)
-    string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
+    # string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
     string = re.sub(r"\*", " ", string)
     string = re.sub(r"\'s", " \'s", string)
     string = re.sub(r"\'m", " \'m", string)
@@ -245,6 +265,25 @@ def read_test_data(training_data_file_path):
 
 
 # # Feature Extraction Snippets
+
+with open(wassa_home + 'lexicons/emoji_map.json') as emoji_file:
+    emoji_list = json.load(emoji_file)
+
+emoji_dict = dict()
+for emoji in emoji_list:
+    emoji_dict[emoji["emoji"]] = (emoji["name"], emoji["polarity"])
+
+poly_emoji_intensity = PolynomialFeatures(5)
+
+
+def get_emoji_intensity(tweet):
+    score = 0.0
+    for emoji in emoji_dict.keys():
+        count = tweet.count(emoji)
+        score += count * emoji_dict[emoji][1]
+
+    return poly_emoji_intensity.fit_transform(np.array([score]).reshape(1, -1))[0].tolist()
+
 
 # ## Emotion Intensity Lexicon
 
@@ -867,7 +906,7 @@ def get_sentiment_hash_sent_lex_vector(tweet):
 
 # In[225]:
 
-num_test = 2047
+num_test = 32767
 
 
 # In[226]:
@@ -924,21 +963,21 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
 
     '''NRC Sentiment Lexica'''
     index = 5
-    if is_active_vector_method(bin_string[5]):
+    if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = DataFrame(list(map(lambda x: get_sentiment_emotion_feature(x), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
     index = 6
-    if is_active_vector_method(bin_string[6]):
+    if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = DataFrame(list(map(lambda x: get_sentiment_emoticon_lexicon_vector(x), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
     index = 7
-    if is_active_vector_method(bin_string[7]):
+    if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = DataFrame(list(map(lambda x: get_sentiment_emoticon_afflex_vector(x), tweet_list)))
             vector_dict[index] = tmp_vector
@@ -946,23 +985,54 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
 
     '''NRC Hashtag Lexica'''
     index = 8
-    if is_active_vector_method(bin_string[8]):
+    if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = DataFrame(list(map(lambda x: get_hashtag_emotion_vector(x), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
     index = 9
-    if is_active_vector_method(bin_string[9]):
+    if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = DataFrame(list(map(lambda x: get_sentiment_hash_sent_lex_vector(x), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
     index = 10
-    if is_active_vector_method(bin_string[10]):
+    if is_active_vector_method(bin_string[index]):
         if index not in vector_dict.keys():
             tmp_vector = DataFrame(list(map(lambda x: get_sentiment_hashtag_affneglex_vector(x), tweet_list)))
+            vector_dict[index] = tmp_vector
+        frames.append(vector_dict[index])
+
+    index = 11
+    if is_active_vector_method(bin_string[index]):
+        if index not in vector_dict.keys():
+            tmp_vector = \
+                DataFrame(list(map(lambda x: get_word2vec_embedding(x, wv_model_3, w2v_dimensions_3), tweet_list)))
+            vector_dict[index] = tmp_vector
+        frames.append(vector_dict[index])
+
+    index = 12
+    if is_active_vector_method(bin_string[index]):
+        if index not in vector_dict.keys():
+            tmp_vector = \
+                DataFrame(list(map(lambda x: get_word2vec_embedding(x, wv_model_4, w2v_dimensions_4), tweet_list)))
+            vector_dict[index] = tmp_vector
+        frames.append(vector_dict[index])
+
+    index = 13
+    if is_active_vector_method(bin_string[index]):
+        if index not in vector_dict.keys():
+            tmp_vector = \
+                DataFrame(list(map(lambda x: get_word2vec_embedding(x, wv_model_5, w2v_dimensions_5), tweet_list)))
+            vector_dict[index] = tmp_vector
+        frames.append(vector_dict[index])
+
+    index = 14
+    if is_active_vector_method(bin_string[index]):
+        if index not in vector_dict.keys():
+            tmp_vector = DataFrame(list(map(lambda x: get_emoji_intensity(x), tweet_list)))
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
@@ -992,12 +1062,13 @@ def load_all_data(emotion):
     training_data_file_path = \
         wassa_home + "dataset/" + emotion + "-ratings-0to1.train.txt"
     dev_set_path = \
-        wassa_home + "dataset/gold-set/" + emotion + "-ratings-0to1.dev.gold.txt"
+        wassa_home + "dataset/dev-set/" + emotion + "-ratings-0to1.dev.gold.txt"
     test_data_file_path = \
-        wassa_home + "dataset/" + emotion + "-ratings-0to1.test.gold.txt"
+        wassa_home + "dataset/test-set/" + emotion + "-ratings-0to1.test.gold.txt"
 
     score_train = list()
     tweet_train = list()
+    tweet_test = list()
     y_gold = list()
 
     training_tweets = read_training_data(training_data_file_path)
@@ -1046,7 +1117,7 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
 
     for i in range(num_test, 0, -1):
         print("Current test: " + str(i) + "/" + str(num_test))
-        bin_string = '{0:011b}'.format(i)
+        bin_string = '{0:015b}'.format(i)
         start_time = time.time()
 
         print("Vectorizing data")
