@@ -1065,6 +1065,7 @@ def load_all_data(emotion):
 
     score_train = list()
     tweet_train = list()
+    tweet_test = list()
     y_gold = list()
 
     training_tweets = read_training_data(training_data_file_path)
