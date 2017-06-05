@@ -1064,7 +1064,7 @@ def load_all_data(emotion):
     dev_set_path = \
         wassa_home + "dataset/dev-set/" + emotion + "-ratings-0to1.dev.gold.txt"
     test_data_file_path = \
-        wassa_home + "dataset/test-set/gold-labels/" + emotion + "-ratings-0to1.test.gold.txt"
+        wassa_home + "dataset/test-set/" + emotion + "-ratings-0to1.test.gold.txt"
 
     score_train = list()
     tweet_train = list()
