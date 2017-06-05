@@ -145,10 +145,13 @@ def loadGloveModel(gloveFile):
     f = open(gloveFile, 'r')
     model = {}
     for line in f:
-        splitLine = line.split()
-        word = splitLine[0]
-        embedding = [float(val) for val in splitLine[1:]]
-        model[word] = np.array(embedding)
+        try:
+            splitLine = line.split()
+            word = splitLine[0]
+            embedding = [float(val) for val in splitLine[1:]]
+            model[word] = np.array(embedding)
+        except Exception as e:
+            print("Skipping line")
     print("Done.", len(model), " words loaded!")
     return model
 
