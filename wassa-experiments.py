@@ -308,6 +308,13 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
+    index = 15
+    if is_active_vector_method(bin_string[index]):
+        if index not in vector_dict.keys():
+            tmp_vector = DataFrame(list(map(lambda x: get_depeche_mood_vector(x), tweet_list)))
+            vector_dict[index] = tmp_vector
+        frames.append(vector_dict[index])
+
     vectors = pd.concat(frames, axis=1)
 
     return vectors.values.tolist()
