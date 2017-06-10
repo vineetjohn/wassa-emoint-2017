@@ -180,7 +180,7 @@ def read_training_data(training_data_file_path):
     return train_list
 
 
-num_test = 32767
+num_test = 65535
 
 
 def is_active_vector_method(string):
@@ -308,6 +308,13 @@ def vectorize_tweets(tweet_list, bin_string, vector_dict):
             vector_dict[index] = tmp_vector
         frames.append(vector_dict[index])
 
+    index = 15
+    if is_active_vector_method(bin_string[index]):
+        if index not in vector_dict.keys():
+            tmp_vector = DataFrame(list(map(lambda x: get_depeche_mood_vector(x), tweet_list)))
+            vector_dict[index] = tmp_vector
+        frames.append(vector_dict[index])
+
     vectors = pd.concat(frames, axis=1)
 
     return vectors.values.tolist()
@@ -368,7 +375,7 @@ def load_all_data(emotion):
     return tweet_train, tweet_test, score_train, y_gold
 
 
-for emotion in ['anger', 'sadness', 'joy', 'fear']:
+for emotion in ['anger', 'fear', 'joy', 'sadness']:
 
     print("Working on: " + emotion)
     tweet_train, tweet_test, score_train, y_gold = load_all_data(emotion)
@@ -392,7 +399,7 @@ for emotion in ['anger', 'sadness', 'joy', 'fear']:
 
     for i in range(num_test, 0, -1):
         print("Current test: " + str(i) + "/" + str(num_test))
-        bin_string = '{0:015b}'.format(i)
+        bin_string = '{0:016b}'.format(i)
         start_time = time.time()
 
         print("Vectorizing data")
