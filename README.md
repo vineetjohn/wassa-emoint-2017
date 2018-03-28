@@ -15,20 +15,20 @@ Part of the 8th Workshop on Computational Approaches to Subjectivity, Sentiment 
 If you wish to use this project as part of your research/project, please cite
 
 ```
-@inproceedings{DBLP:conf/semeval/JohnV17,
+@inproceedings{DBLP:conf/wassa/JohnV17,
   author    = {Vineet John and
                Olga Vechtomova},
-  title     = {UW-FinSent at SemEval-2017 Task 5: Sentiment Analysis on Financial
-               News Headlines using Training Dataset Augmentation},
-  booktitle = {Proceedings of the 11th International Workshop on Semantic Evaluation,
-               SemEval@ACL 2017, Vancouver, Canada, August 3-4, 2017},
-  pages     = {872--876},
+  title     = {UWat-Emote at EmoInt-2017: Emotion Intensity Detection using Affect
+               Clues, Sentiment Polarity and Word Embeddings},
+  booktitle = {Proceedings of the 8th Workshop on Computational Approaches to Subjectivity,
+               Sentiment and Social Media Analysis, WASSA@EMNLP 2017, Copenhagen,
+               Denmark, September 8, 2017},
+  pages     = {249--254},
   year      = {2017},
-  crossref  = {DBLP:conf/semeval/2017},
-  url       = {https://doi.org/10.18653/v1/S17-2149},
-  doi       = {10.18653/v1/S17-2149},
-  timestamp = {Wed, 16 Aug 2017 09:23:06 +0200},
-  biburl    = {https://dblp.org/rec/bib/conf/semeval/JohnV17},
+  crossref  = {DBLP:conf/wassa/2017},
+  url       = {https://aclanthology.info/papers/W17-5235/w17-5235},
+  timestamp = {Wed, 17 Jan 2018 15:46:08 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/wassa/JohnV17},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
